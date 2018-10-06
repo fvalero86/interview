@@ -1,5 +1,10 @@
 # Create cloudfront distribution to include the header X-Glovo-Systems-Engineer-Candidate
 # pointing to the application load balancer 
+provider "aws" {
+  version     = "~> 1.39"
+  region      = "${var.region}"
+}
+
 resource "aws_cloudfront_distribution" "interview" {
   enabled             = "${var.enabled}"
   is_ipv6_enabled     = "${var.is_ipv6_enabled}"

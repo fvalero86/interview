@@ -1,3 +1,8 @@
+variable "region" {
+    default     = "eu-east-1"
+    description = "Select the default region to work on"
+}
+
 variable "enabled" {
   default     = "true"
   description = "Select Enabled if you want CloudFront to begin processing requests as soon as the distribution is created, or select Disabled if you do not want CloudFront to begin processing requests after the distribution is created."
@@ -26,6 +31,7 @@ variable "load_balancer_id" {
 variable "load_balancer" {
     default = ""
 }
+
 variable "origin_force_destroy" {
   default     = "false"
   description = "Delete all objects from the bucket  so that the bucket can be destroyed without error (e.g. `true` or `false`)"
