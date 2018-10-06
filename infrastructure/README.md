@@ -24,8 +24,10 @@ The variable files are distributed per environment:
   * Custom header **X-Glovo-Systems-Engineer-Candidate** set to ` 1 ` [here](cloudfront/variables.tf#L70)
 
 ## Notes
-1. In this specific case Ansible or whatever kind of CM is not neccesary due we manage all our app versions with EBS using the Rolling update [here](app/main.tf#L133)
+1. In this specific case Ansible or whatever kind of CM is not neccesary due we manage all our app versions with EBS using the **Rolling update** with no downtime [here](app/main.tf#L133)
 
-2. The main idea is build all the instances stateless and forward logs, metrics, etc into cloudwatch or another log concentrator like an ELK infrastructure.
+2. Application configuration or features should be managed via `.ebsextensions` file in deployment time: https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-configuration-methods-during.html#configuration-options-during-ebcli-ebextensions
 
-3. Log stuff, related with log retention, rotation, prefix, etc.. where intentionally omited for brevity.
+3. The main idea is build all the instances stateless and forward logs, metrics, etc into cloudwatch or another log concentrator like an ELK infrastructure.
+
+4. Log stuff, related with log retention, rotation, prefix, etc.. where intentionally omited for brevity.
