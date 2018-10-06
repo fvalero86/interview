@@ -14,9 +14,9 @@ The variable files are distributed per environment:
 * S3 bucket with the application code **systems-engineer-interview-1.0-SNAPSHOT.jar** (zipped):
 [here](https://github.com/fvalero86/interview/blob/master/infrastructure/main.tf#L10)
 * Custom VPC for the app
-* Elastic Beanstalk environment and application:
+* Elastic Beanstalk environment and application [app/main.tf]:(https://github.com/fvalero86/interview/blob/master/infrastructure/app/main.tf)
   * Autoscaling by CPU usage: [here](https://github.com/fvalero86/interview/blob/master/infrastructure/app/main.tf#L96)
-* Cloudfront distribution:
+* Cloudfront distribution [cloudfront/main.tf](https://github.com/fvalero86/interview/blob/master/infrastructure/cloudfront/main.tf):
   * Custom behaviour to redirect all the traffic (/) to the EBS LoadBalancer [here](https://github.com/fvalero86/interview/blob/master/infrastructure/cloudfront/main.tf#L31)
   * Custom header **X-Glovo-Systems-Engineer-Candidate** set to ` 1 ` [here](https://github.com/fvalero86/interview/blob/master/infrastructure/cloudfront/variables.tf#L70)
   
